@@ -5,15 +5,17 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @NoArgsConstructor
 @Data
+@Entity
 public class Categoria extends BaseDomain{
 
     private String nome;
-    private List<Produto> list;
+    //private List<Produto> list;
 
     public Categoria(String nome) {
         super(null, LocalDateTime.now(), null);
