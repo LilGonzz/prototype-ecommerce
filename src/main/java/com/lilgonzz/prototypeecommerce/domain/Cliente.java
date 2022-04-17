@@ -1,26 +1,28 @@
 package com.lilgonzz.prototypeecommerce.domain;
 
 import com.lilgonzz.prototypeecommerce.domain.Enum.TipoCliente;
+import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.persistence.Entity;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 @NoArgsConstructor
-@Getter
-@Setter
+@Data
+@Entity
 public class Cliente extends BaseDomain{
 
     private String nome;
     private String email;
     private String documento;
     private TipoCliente tipo;
-    private List<Pedido> pedidos;
+    //private List<Pedido> pedidos;
 
-    private List<Telefone> telefone;
+    //private List<Telefone> telefone;
 
     public Cliente(String nome, String email, String documento, TipoCliente tipo, List<Telefone> telefone){
         super(null, LocalDateTime.now(), null);
@@ -28,7 +30,7 @@ public class Cliente extends BaseDomain{
         this.email=email;
         this.documento=documento;
         this.tipo=tipo;
-        this.telefone = telefone;
-        this.pedidos = new ArrayList<Pedido>();
+        //this.telefone = telefone;
+        //this.pedidos = new ArrayList<Pedido>();
     }
 }
